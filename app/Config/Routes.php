@@ -18,7 +18,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Customer');
+$routes->setDefaultController('Product');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -34,7 +34,6 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/products', 'Product::index');
 $routes->get('/products/(:num)', 'Product::getProduct/$1');
-$routes->post('/customer', 'Customer::create');
 $routes->put('/products/(:num)', 'Product::update/$1');
 $routes->delete('/products/(:num)', 'Product::delete/$1');
 /*
